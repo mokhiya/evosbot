@@ -15,7 +15,7 @@ async def start_handler(message: types.Message, state: FSMContext):
     await state.finish()
     user = await get_user(chat_id=message.chat.id)
     if user:
-        text = "Welcome back my hero 😊"
+        text = f"Welcome back, {message.chat.first_name}!"
         await message.answer(text=text, reply_markup=await user_main_menu_keyboard())
     else:
         text = "Sorry, you have to enter your full name"
@@ -38,7 +38,7 @@ async def get_phone_number_handler(message: types.Message, state: FSMContext):
     data = await state.get_data()
     new_user = await add_user(message=message, data=data)
     if new_user:
-        text = "You have successfully registered ✅"
+        text = "You have successfully registered"
         await message.answer(text=text, reply_markup=await user_main_menu_keyboard())
     else:
         text = "Sorry, please try again later 😔"

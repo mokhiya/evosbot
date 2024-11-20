@@ -9,10 +9,9 @@ async def user_main_menu_keyboard():
             ],
             [
                 KeyboardButton(text="My orders"),
-                KeyboardButton(text="Our branches"),
             ],
             [
-                KeyboardButton(text="Contact"),
+                KeyboardButton(text="Feedback"),
                 KeyboardButton(text="Settings"),
             ]
         ], resize_keyboard=True
